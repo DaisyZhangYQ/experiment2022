@@ -19,7 +19,7 @@
     <script src="test_sales_stimuli.js"></script>
     <link rel="stylesheet" href="dist/jspsych.css">
     <link rel="stylesheet" href="dist/survey.css">
-    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="./test_2.css">
 </head>
 
 <body>
@@ -57,6 +57,7 @@
                 //jsPsych.data.displayData();
             jsPsych.data.get().localSave('csv', file_name_csv);
             jsPsych.data.get().localSave('json', file_name_json);
+            document.getElementById('jspsych-content').innerHTML += `<p class='context' style='font-size:22px; text-align=center'>实验结束，感谢您的参与！</p>`
         }
     });
 
@@ -281,11 +282,13 @@
             }, {
                 type: 'text',
                 prompt: '1. 您预计制作多少杯柃檬水？',
-                name: 'pred_num_practice'
+                name: 'pred_num_practice',
+                required: true
             }, {
                 type: 'likert',
                 prompt: '2. 您对自己的预测结果有多大信心？',
                 name: 'pred_confi_practice',
+                required: true,
                 likert_scale_min_label: '完全没有信心',
                 likert_scale_max_label: '非常有信心',
                 likert_scale_values: [{
@@ -956,11 +959,13 @@
             }, {
                 type: 'text',
                 prompt: '· 您预计制作多少杯柃檬水？',
-                name: 'pred_num'
+                name: 'pred_num',
+                required: true
             }, {
                 type: 'likert',
                 prompt: '· 您对自己的预测结果有多大信心？',
                 name: 'pred_confi_practice',
+                required: true,
                 likert_scale_min_label: '完全没有信心',
                 likert_scale_max_label: '非常有信心',
                 likert_scale_values: likert_scale
@@ -1050,7 +1055,8 @@
                     prompt: '请问您有多大意愿使用该算法预测接下来7次的柠檬水销量？',
                     likert_scale_min_label: '完全不愿使用',
                     likert_scale_max_label: '非常愿意使用',
-                    likert_scale_values: likert_scale
+                    likert_scale_values: likert_scale,
+                    required: true
                 }, {
                     type: 'multi-choice',
                     prompt: '请您决定是否让该算法为您做接下来7次的销量预测:',
@@ -1182,11 +1188,13 @@
             }, {
                 type: 'text',
                 prompt: '· 您预计制作多少杯柃檬水？',
-                name: 'pred_num'
+                name: 'pred_num',
+                required: true
             }, {
                 type: 'likert',
                 prompt: '· 您对自己的预测结果有多大信心？',
                 name: 'pred_confi_practice',
+                required: true,
                 likert_scale_min_label: '完全没有信心',
                 likert_scale_max_label: '非常有信心',
                 likert_scale_values: likert_scale
@@ -1276,7 +1284,8 @@
                     prompt: '请问您有多大意愿使用该算法预测接下来7次的柠檬水销量？',
                     likert_scale_min_label: '完全不愿使用',
                     likert_scale_max_label: '非常愿意使用',
-                    likert_scale_values: likert_scale
+                    likert_scale_values: likert_scale,
+                    required: true
                 }, {
                     type: 'multi-choice',
                     prompt: '请您决定是否让该算法为您做接下来7次的销量预测:',
@@ -1409,14 +1418,16 @@
             }, {
                 type: 'text',
                 prompt: '· 您预计制作多少杯柃檬水？',
-                name: 'pred_num'
+                name: 'pred_num',
+                required: true
             }, {
                 type: 'likert',
                 prompt: '· 您对自己的预测结果有多大信心？',
                 name: 'pred_confi_practice',
                 likert_scale_min_label: '完全没有信心',
                 likert_scale_max_label: '非常有信心',
-                likert_scale_values: likert_scale
+                likert_scale_values: likert_scale,
+                required: true
             }, ]
         ],
         button_label_finish: '提交预测结果',
@@ -1503,7 +1514,8 @@
                     prompt: '请问您有多大意愿使用该算法预测接下来7次的柠檬水销量？',
                     likert_scale_min_label: '完全不愿使用',
                     likert_scale_max_label: '非常愿意使用',
-                    likert_scale_values: likert_scale
+                    likert_scale_values: likert_scale,
+                    required: true
                 }, {
                     type: 'multi-choice',
                     prompt: '请您决定是否让该算法为您做接下来7次的销量预测:',
@@ -1636,14 +1648,16 @@
             }, {
                 type: 'text',
                 prompt: '· 您预计制作多少杯柃檬水？',
-                name: 'pred_num'
+                name: 'pred_num',
+                required: true
             }, {
                 type: 'likert',
                 prompt: '· 您对自己的预测结果有多大信心？',
                 name: 'pred_confi_practice',
                 likert_scale_min_label: '完全没有信心',
                 likert_scale_max_label: '非常有信心',
-                likert_scale_values: likert_scale
+                likert_scale_values: likert_scale,
+                required: true
             }, ]
         ],
         button_label_finish: '提交预测结果',
