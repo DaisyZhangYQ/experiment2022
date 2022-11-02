@@ -150,7 +150,7 @@
                     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 1.5em">【酬金规则介绍】</p>
                     <div class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                     实验酬金计算如下：</br>
-                    <p>① 基本酬金：完整参与游戏，获得<font color="red">15</font>元。</p>
+                    <p>① 基本酬金：完整参与游戏，获得<font color="red">20</font>元。</p>
                     <p>② 浮动酬金：根据<font color="red">随机选取某一次i的经营收益</font>和第i次预测与实际值的差距计算浮动酬金。</p>
                     <p line-height: 0em>③ 最终酬金=基本酬金+浮动酬金。</p></div>
                     ——————————————————————————————————————————————————————<br/>
@@ -161,7 +161,7 @@
                     <p>· 预测偏差损失：每偏离正确销量一杯，损失1元</p>
                     <p>· 第一次预测15杯，实际销售13杯，第一次收益：13x1-15x0.4=7元，第一次偏差损失: (15-13)x1=2元</p>
                     <p>· 第二次预测15杯，实际需求20杯，第二次收益：15x1-15x0.4=9元，第一次偏差损失: (20-15)x1=5元</p>
-                    <p>· 随机抽取第二次预测结果作为浮动酬金，则全部的实验酬金为：15+9-5=19元</p>
+                    <p>· 随机抽取第二次预测结果作为浮动酬金，则全部的实验酬金为：20+9-5=24元</p>
                     </div>
                     ———————————————————————————————————————————————————————<br/>
                     <p>`,
@@ -216,7 +216,7 @@
                     <div style="text-indent:4.375rem /* 70/16 */; font:16pt SimSun; line-height: 0.8em; text-align:left">
                     <p>· 柠檬水售价：1 元/杯。</p>
                     <p>· 制作成本：0.2元/杯。</p>
-                    <p>· 预测偏差损失：1元/杯。</p></div>
+                    <p>· 预测偏差损失：2元/杯。</p></div>
                     </br>
 
                     <div style="text-indent:2.5rem /* 40/16 */; font:14pt SimSun; line-height: 0.8em; text-align:left">
@@ -256,7 +256,7 @@
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">柠檬水销量预测</p></br>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                请您根据以下信息预测柠檬水销量（售价1元/杯，成本1元/杯）：</p>
+                请您根据以下信息预测柠檬水销量（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</font>：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -329,7 +329,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
                 //var ture_sale = parseInt(ture_sale)
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
-            var bias_loss = (Math.abs(self_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -848,7 +848,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -892,7 +892,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
             var algo_pre = jsPsych.timelineVariable('Algo_pred_w')
             var daily_profit = (algo_pre > ture_sale) ? (ture_sale - algo_pre * 0.2) : (algo_pre * 0.8)
-            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(algo_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -994,7 +994,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
                 //var ture_sale = parseInt(ture_sale)
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
-            var bias_loss = (Math.abs(self_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1079,7 +1079,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1121,7 +1121,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
             var algo_pre = jsPsych.timelineVariable('Algo_pred_w')
             var daily_profit = (algo_pre > ture_sale) ? (ture_sale - algo_pre * 0.2) : (algo_pre * 0.8)
-            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(algo_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1164,7 +1164,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据提供的信息预测柠檬水销量：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1223,7 +1223,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
                 //var ture_sale = parseInt(ture_sale)
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
-            var bias_loss = (Math.abs(self_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1308,7 +1308,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1351,7 +1351,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
             var algo_pre = jsPsych.timelineVariable('Algo_pred_w')
             var daily_profit = (algo_pre > ture_sale) ? (ture_sale - algo_pre * 0.2) : (algo_pre * 0.8)
-            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(algo_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1394,7 +1394,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据提供的信息预测柠檬水销量：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1453,7 +1453,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
                 //var ture_sale = parseInt(ture_sale)
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
-            var bias_loss = (Math.abs(self_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1538,7 +1538,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 接下来您将<font color='red'>依次看到7次算法预测</font>中一次预测的信息和结果：</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1581,7 +1581,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
             var algo_pre = jsPsych.timelineVariable('Algo_pred_w')
             var daily_profit = (algo_pre > ture_sale) ? (ture_sale - algo_pre * 0.2) : (algo_pre * 0.8)
-            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(algo_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(algo_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -1624,7 +1624,7 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 接下来您需要<font color='red'>自己预测</font>柠檬水销量。</p>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
-                # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
+                # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
@@ -1683,7 +1683,7 @@
             var ture_sale = jsPsych.timelineVariable('Sales')
                 //var ture_sale = parseInt(ture_sale)
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
-            var bias_loss = (Math.abs(self_pre - ture_sale)) * 1
+            var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
             var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
@@ -2146,51 +2146,250 @@
                 required: true,
             }],
             [{
-                    type: 'html',
-                    prompt: '请判断下列陈述是否符合您的情况。',
+                type: 'html',
+                prompt: '请判断下列陈述是否符合您的情况。',
+            }, {
+                type: 'likert',
+                prompt: '· 如果我投入必要的努力，我可以解决大多数问题',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'self_efficacy6',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我可以在面对困难时保持冷静，因为我相信自己的应对能力',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'self_efficacy7',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 当我遇到一个问题时，我通常可以找到几种解决方法',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'self_efficacy8',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 如果我遇到了麻烦，我通常可以找到一个解决方案',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'self_efficacy9',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我通常可以处理遇到的任何事情',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'self_efficacy10',
+                likert_scale_values: likert_scale,
+                required: true,
+            }],
+            [{
+                type: 'html',
+                prompt: '请判断下列陈述是否符合您的情况。',
+            }, {
+                type: 'likert',
+                prompt: '· 我更喜欢可以很大程度上控制自己工作内容和工作时间的工作',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_1',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢参与政治活动，因为我想在管理政府方面有尽可能多的发言权',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_2',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我尽量避免别人告诉我做什么的情况',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_3',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我更愿意成为领导者而不是追随者',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_4',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢能够影响别人的行为',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_5',
+                likert_scale_values: likert_scale,
+                required: true,
+            }],
+            [{
+                type: 'html',
+                prompt: '请判断下列陈述是否符合您的情况。',
+            }, {
+                type: 'likert',
+                prompt: '· 别人通常知道什么对我来说是最好的',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_6',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢自己做决定',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_7',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢控制自己的命运',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_8',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 当我参与一个团体项目时，我宁愿由别人来担任领导角色',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_9',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我认为自己一般比别人更有能力处理各种情况',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_10',
+                likert_scale_values: likert_scale,
+                required: true,
+            }],
+            [{
+                type: 'html',
+                prompt: '请判断下列陈述是否符合您的情况。',
+            }, {
+                type: 'likert',
+                prompt: '· 我宁愿自己做项目，自己犯错误，也不愿听从别人的命令',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_11',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 即使做了最完美的计划，一个小小的意外事件也会破坏一切',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_12',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢在开始工作之前好好了解一下工作内容',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_13',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 当看到一个问题时，我更愿意为解决这个问题做些什么，而不是坐视不管',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_14',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 当涉及到命令时，我更喜欢发出命令而不是接受命令',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_15',
+                likert_scale_values: likert_scale,
+                required: true,
+            }],
+            [{
+                type: 'html',
+                prompt: '请判断下列陈述是否符合您的情况。',
+            }, {
+                type: 'likert',
+                prompt: '· 我希望我可以把生活中的许多日常决定交给别人处理',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_16',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 出行时，我尽量避免将自己置于可能被他人的失误所伤害的境地',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_17',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我希望避免别人告诉我应该做什么的情况',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_18',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 在许多情况下，我宁愿只有一个选择，而不是必须自己做出决定',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_19',
+                likert_scale_values: likert_scale,
+                required: true,
+            }, {
+                type: 'likert',
+                prompt: '· 我喜欢等等看看别人是否能解决问题，这样我就不必为之烦恼了',
+                likert_scale_min_label: '完全不符合',
+                likert_scale_max_label: '完全符合',
+                name: 'desire_for_control_20',
+                likert_scale_values: likert_scale,
+                required: true,
+            }],
+            [{
+                type: 'likert-table',
+                prompt: '在一项游戏中，收益结果是根据抛硬币的结果决定的，请仔细阅读收益规则并决定是否接受游戏挑战。',
+                statements: [{
+                    prompt: '# 1.如果硬币正面朝上，你会失去20元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_1'
                 }, {
-                    type: 'likert',
-                    prompt: '· 如果我投入必要的努力，我可以解决大多数问题',
-                    likert_scale_min_label: '完全不符合',
-                    likert_scale_max_label: '完全符合',
-                    name: 'self_efficacy6',
-                    likert_scale_values: likert_scale,
-                    required: true,
+                    prompt: '# 2.如果硬币正面朝上，你会失去30元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_2'
                 }, {
-                    type: 'likert',
-                    prompt: '· 我可以在面对困难时保持冷静，因为我相信自己的应对能力',
-                    likert_scale_min_label: '完全不符合',
-                    likert_scale_max_label: '完全符合',
-                    name: 'self_efficacy7',
-                    likert_scale_values: likert_scale,
-                    required: true,
+                    prompt: '# 3.如果硬币正面朝上，你会失去40元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_3'
                 }, {
-                    type: 'likert',
-                    prompt: '· 当我遇到一个问题时，我通常可以找到几种解决方法',
-                    likert_scale_min_label: '完全不符合',
-                    likert_scale_max_label: '完全符合',
-                    name: 'self_efficacy8',
-                    likert_scale_values: likert_scale,
-                    required: true,
+                    prompt: '# 4.如果硬币正面朝上，你会失去50元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_4'
                 }, {
-                    type: 'likert',
-                    prompt: '· 如果我遇到了麻烦，我通常可以找到一个解决方案',
-                    likert_scale_min_label: '完全不符合',
-                    likert_scale_max_label: '完全符合',
-                    name: 'self_efficacy9',
-                    likert_scale_values: likert_scale,
-                    required: true,
+                    prompt: '# 5.如果硬币正面朝上，你会失去60元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_5'
                 }, {
-                    type: 'likert',
-                    prompt: '· 我通常可以处理遇到的任何事情',
-                    likert_scale_min_label: '完全不符合',
-                    likert_scale_max_label: '完全符合',
-                    name: 'self_efficacy10',
-                    likert_scale_values: likert_scale,
-                    required: true,
-                }
-
-            ]
+                    prompt: '# 6.如果硬币正面朝上，你会失去70元；如果硬币背面朝上，你会获得60元。',
+                    name: 'loss_aversion_6'
+                }],
+                options: ['接受', '拒绝'],
+                required: true
+            }]
         ],
         button_label_back: '上一页',
         button_label_next: '下一页',
@@ -2245,7 +2444,7 @@
                 var i = Math.floor(Math.random() * 10)
                 var select_date = date_list[i]
                 var select_profit = profit_list[i]
-                var select_all_profit = 15.0 + parseFloat(select_profit)
+                var select_all_profit = 20.0 + parseFloat(select_profit)
                 var select_all_profit = Math.floor(select_all_profit * 100) / 100
                     //var select_profit = profit_list[2]
                     //var trial_num = Math.ceil(Math.random() * 14)
