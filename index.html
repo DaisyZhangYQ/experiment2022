@@ -57,7 +57,7 @@
                 //jsPsych.data.displayData();
             jsPsych.data.get().localSave('csv', file_name_csv);
             jsPsych.data.get().localSave('json', file_name_json);
-            document.getElementById('jspsych-content').innerHTML += `<p class='context' style='font-size:22px; text-align=center'>实验结束，感谢您的参与！</p>`
+            document.getElementById('jspsych-content').innerHTML += `<p class='context' style='font-size:1.375rem /* 22/16 */; text-align=center'>实验结束，感谢您的参与！</p>`
         }
     });
 
@@ -114,10 +114,10 @@
                     <p style="font: bold 28pt 微软雅黑; color: #B22222"> 判断与预测实验 </p></br></br>
   
                     <p class='context'>您好！我们是浙江大学管理学院的研究团队，本次实验主要围绕<font color="red"> 判断与预测 </font>开展。接下来实验过程中，需要您<font color="red"> 做出判断和预测</font>。请放心，您的回复将完全保密。
-                    <p class='context' style='text-indent:50px'>1. 本实验分为三个阶段，您需要做出判断并填写问卷；
-                    <p class='context' style='text-indent:50px'>2. 完成本研究大约需要30分钟，实验期间您可以在任何时间退出实验且同意放弃相关酬金。
-                    <p class='context' style='text-indent:50px'>3. 请仔细阅读每一页的提示语，需要特别注意最后实验数据保存的要求。
-                    <p class='context' style='text-indent:50px'>4. 实验过程中请不要退出全屏模式。
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>1. 本实验分为三个阶段，您需要做出判断并填写问卷；
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>2. 完成本研究大约需要30分钟，实验期间您可以在任何时间退出实验且同意放弃相关酬金。
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>3. 请仔细阅读每一页的提示语，需要特别注意最后实验数据保存的要求。
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>4. 实验过程中请不要退出全屏模式。
                     <p class='context'>
                     <p class='context'>在了解和同意以上的注意事项后，请点击按钮进入全屏模式并进入实验环节。</p>
                     <p style="font: bold 32pt"> </p>
@@ -134,8 +134,8 @@
             message: `
                     <p style="font: bold 22pt 微软雅黑; text-align: left; line-height: 1.8em"> 【实验背景介绍】</p></br>
                     <p class='context'>在本实验中，您将模拟进行一项<font color="red">柠檬水经营游戏</font>。具体情境如下：</p></br>
-                    <p class='context' style='text-indent:50px'>· 您的角色是<font color="red">某公园柠檬水摊位的摊主</font>，主要任务是根据提供的信息<font color="red">预测柠檬水的销量</font>，以便提前准备好相关的制作材料。</p>
-                    <p class='context' style='text-indent:50px'>· 您接收到的信息是随机的，您可以使用提供的纸和笔辅助记录。</p></br>
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>· 您的角色是<font color="red">某公园柠檬水摊位的摊主</font>，主要任务是根据提供的信息<font color="red">预测柠檬水的销量</font>，以便提前准备好相关的制作材料。</p>
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */'>· 您接收到的信息是随机的，您可以使用提供的纸和笔辅助记录。</p></br>
                     <p class='context'>在本实验中，您有机会通过<font color="red">更精确的预测获得更多的实验报酬</font>，因此请仔细阅读所有的相关信息。</p>
                     <p>`,
             button_label: '查看酬金规则',
@@ -148,13 +148,13 @@
             fullscreen_mode: true,
             message: `
                     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 1.5em">【酬金规则介绍】</p>
-                    <div class='context' style='text-indent:50px; line-height: 1.2em'>
+                    <div class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                     实验酬金计算如下：</br>
                     <p>① 基本酬金：完整参与游戏，获得<font color="red">15</font>元。</p>
                     <p>② 浮动酬金：根据<font color="red">随机选取某一次i的经营收益</font>和第i次预测与实际值的差距计算浮动酬金。</p>
                     <p line-height: 0em>③ 最终酬金=基本酬金+浮动酬金。</p></div>
                     ——————————————————————————————————————————————————————<br/>
-                    <div style="text-indent:70px; color:Gray; font:15pt 微软雅黑; line-height: 0.8em; text-align:left"> 
+                    <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:15pt 微软雅黑; line-height: 0.8em; text-align:left"> 
                     酬金计算示例：<br/>
                     <p>· 售价：1元/杯</p>
                     <p>· 成本：0.4元/杯</p>
@@ -201,9 +201,9 @@
             fullscreen_mode: true,
             message: `
                     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 1.2em">【游戏要点】</p></br>
-                    <p class='context' style='text-indent:50px; line-height: 1em'>
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1em'>
                     作为经营类游戏，您的主要职责是根据<font color="red">4项相关信息预测相应的柠檬水销量</font>。4项相关信息的介绍如下：</p>
-                    <div style="text-indent:70px; font:16pt SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:4.375rem /* 70/16 */; font:16pt SimSun; line-height: 0.8em; text-align:left">
                     <p>① <font color="red">日期</font>：月份和几号，例如8月15号。</p>
                     <p>② <font color="red">星期</font>：周一到周日。</p>
                     <p>③ <font color="red">气温</font>：摄氏度，根据天气预报得到。</p>
@@ -211,15 +211,15 @@
                     <p>⑤ <font color="red">制作传单数</font>：当天制作的传单数量（传单的制作和发放成本暂时不考虑）。</p></div>
                     </br>
                    
-                    <p class='context' style='text-indent:50px; line-height: 1em'>
+                    <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1em'>
                         根据公园的相关规定和市场行情，以下信息<font color="red">不会发生变化</font>：</p>
-                    <div style="text-indent:70px; font:16pt SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:4.375rem /* 70/16 */; font:16pt SimSun; line-height: 0.8em; text-align:left">
                     <p>· 柠檬水售价：1 元/杯。</p>
                     <p>· 制作成本：0.2元/杯。</p>
                     <p>· 预测偏差损失：1元/杯。</p></div>
                     </br>
 
-                    <div style="text-indent:40px; font:14pt SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:2.5rem /* 40/16 */; font:14pt SimSun; line-height: 0.8em; text-align:left">
                     <p>注意1：经营日期在两个月的时间内<font color="red">随机选取</font>，并不会按照时间顺序依次出现，因此务必仔细阅读出现的信息。</p>
                     <p>注意2：本次实验过程中的数据均根据来自现有数据集，不会出现根据您的预测修改真实结果的情况！</p></div>
                     
@@ -255,16 +255,16 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">柠檬水销量预测</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据以下信息预测柠檬水销量（售价1元/杯，成本1元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</font>：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
                 <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
                 </br></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您仔细阅读以上信息，接下来一页需要您填写预测销量。</p>
                 </br></br>
                 `;
@@ -386,9 +386,9 @@
             fullscreen_mode: true,
             message: `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【活动邀请】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.5em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
                 在准备接下来的经营预测之前，请注意以下事件：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.5em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
                 公园最近在举办一场<font color='red'>国际文化周签名征集活动</font>，您也收到了活动宣传单.</p>
                 </br></br>
                 <p>`,
@@ -486,11 +486,11 @@
             fullscreen_mode: true,
             message: `
             <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【正式预测环节】</p></br>
-            <p class='context' style='text-indent:50px; line-height: 1.5em'>
+            <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
             在您做出下一次预测前，收到一封关于<font color='red'>AI预测算法的介绍邮件</font>。</p>
-            <p class='context' style='text-indent:50px; line-height: 1.5em'>
+            <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
             该AI预测算法可能会参加到接下来的预测活动。</p>
-            <p class='context' style='text-indent:50px; line-height: 1.5em'>
+            <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
             请查阅邮件并仔细了解关于该算法的信息。</p>
             </br></br>
             <p>`,
@@ -544,8 +544,8 @@
                     type: 'html',
                     prompt: `
                             <p style='line-height: 1.2em'>* 对于接下来规定次数内的预测收益，您有<font color="red">两种选择</font>:</p>
-                            <p style='text-indent:35px; line-height: 1.2em'>① <font color="red">全部自己预测</font>并随机抽取自己的预测收益</p>
-                            <p style='text-indent:35px; line-height: 1.2em'>② <font color="red">全部算法预测</font>并随机抽取算法的预测收益</p>
+                            <p style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em'>① <font color="red">全部自己预测</font>并随机抽取自己的预测收益</p>
+                            <p style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em'>② <font color="red">全部算法预测</font>并随机抽取算法的预测收益</p>
                             <p style='line-height: 1.2em; color:Gray'>例如，将接下来7次的预测交给算法，则随机从算法的7次预测收益中抽取一次作为您的预测收益；如果选择接下来7次自己预测，则随机从您7次的预测收益中抽取一次。</p>
                             `
                 }, {
@@ -727,9 +727,9 @@
                     type: 'html',
                     prompt: `
                             <p class='context'></p></br></br>
-                            <p style='text-indent:35px; line-height: 1.2em'>在心理学中，控制指的是个人感知自己具备的影响自己、他人、环境的能力，对自己或他人的控制可以影响个人的情绪和行为。</p>
-                            <p style='text-indent:35px; line-height: 1.2em'>研究表明，在AI情境下，有人认为自己完全没有能力去控制AI，AI完全是失控的；也有人认为自己可以自由地控制AI设计、使用和更新等环节。</p>
-                            <p style='text-indent:35px; line-height: 1.2em'>根据对控制的介绍以及已知的算法信息，回答下列问题。`
+                            <p style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em'>在心理学中，控制指的是个人感知自己具备的影响自己、他人、环境的能力，对自己或他人的控制可以影响个人的情绪和行为。</p>
+                            <p style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em'>研究表明，在AI情境下，有人认为自己完全没有能力去控制AI，AI完全是失控的；也有人认为自己可以自由地控制AI设计、使用和更新等环节。</p>
+                            <p style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em'>根据对控制的介绍以及已知的算法信息，回答下列问题。`
                 }, {
                     type: 'likert',
                     prompt: '· 请问您认为您对当前这个预测算法从设计到得到结果的整体控制感有多大？',
@@ -845,11 +845,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您已授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -932,11 +932,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您未授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据提供的信息预测柠檬水销量：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1076,11 +1076,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您已授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1161,11 +1161,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您未授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据提供的信息预测柠檬水销量：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1305,11 +1305,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您已授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请查看第一次预测详情：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1391,11 +1391,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您未授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据提供的信息预测柠檬水销量：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1535,11 +1535,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您已授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 接下来您将<font color='red'>依次看到7次算法预测</font>中一次预测的信息和结果：</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1621,11 +1621,11 @@
         stimulus: function() {
             var html = `
                 <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【您未授权AI算法为您做接下来7次的销量预测】</p></br>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 接下来您需要<font color='red'>自己预测</font>柠檬水销量。</p>
-                <p class='context' style='text-indent:50px; line-height: 1.2em'>
+                <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
-                <div style="text-indent:70px; font:18pt SimSun; line-height: 1em; text-align:left">
+                <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
                 <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
@@ -1859,9 +1859,9 @@
             fullscreen_mode: true,
             message: `
             <p style="font: 20pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">【算法费用变动】：</p></br>
-            <p class='context' style='text-indent:50px; line-height: 1.5em'>
+            <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
             经过一段时间的免费投放，算法团队宣布该AI预测算法的免费试用阶段已经结束，接下来如果使用需要进行<font color='red'>付费</font>。</p>
-            <p class='context' style='text-indent:50px; line-height: 1.5em'>
+            <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.5em'>
             算法团队将算法使用的单价定位：<font color='red'>5元/次</font>。</p>
             </br></br>
             <p>`,
