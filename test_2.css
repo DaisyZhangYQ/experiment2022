@@ -15,7 +15,8 @@
     margin: 0;
     margin-bottom: 1.25rem/* 20/16 */
     ;
-    font-family: SimSun;
+    /*font-family: SimSun;*/
+    font-family: KaiTi;
     font-size: 1.375rem/* 22/16 */
     ;
     font-weight: bold;
@@ -149,6 +150,7 @@ canvas {
     font-size: 1.125rem/* 18/16 */
     ;
     font-family: SimSun;
+    line-height: 1.5em;
 }
 
 div#jspsych-html-keyboard-response-stimulus {
