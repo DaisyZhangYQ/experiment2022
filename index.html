@@ -172,7 +172,7 @@
                     <p> 2. 浮动酬金：根据正式实验环节，总的浮动酬金共由两次浮动酬金组成<b>（具体酬金规则会在接下来相应的实验环节详细介绍）</b>: </p>
                     <p style='text-indent:5rem'> (1)正式实验环节1：浮动酬金1=<font color="red">平均预测收益</font>。</p>
                     <p style='text-indent:5rem'> (2)正式实验环节2：浮动酬金2=<font color="red">随机选取</font>某一次的预测收益。</p>
-                    <p line-height: 0em> # 最终酬金=基本酬金+浮动酬金1+浮动酬金2。</p></div>
+                    <p line-height: 0em> # 最终酬金=基本酬金+浮动酬金1+浮动酬金2。（根据个人表现，最终酬金在<font color="red">35~75元</font>之间浮动）</p></div>
                     ——————————————————————————————————————————————————————<br/><br/>
                     <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:16px 微软雅黑; line-height: 0.8em; text-align:left"> 
                     例如，正式实验环节1的浮动酬金的简单计算示例（非真实实验数据）：<br/>
@@ -279,11 +279,11 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您根据以下信息预测柠檬水销量（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
-                <p>① 日期：${jsPsych.timelineVariable('Date')}</font>：</p>
+                <p>① 日期：${jsPsych.timelineVariable('Date')}</font></p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
-                <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
-                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
+                <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 请您仔细阅读以上信息，接下来一页需要您填写预测销量。</p>
@@ -352,16 +352,18 @@
             var daily_profit = (self_pre > ture_sale) ? (ture_sale - self_pre * 0.2) : (self_pre * 0.8)
             var bias_loss = (Math.abs(self_pre - ture_sale)) * 2
             var bias_percent = ((Math.abs(self_pre - ture_sale)) / ture_sale) * 100
-            var bias_percent = Math.floor(bias_percent * 100) / 100
+            var bias_percent = bias_percent.toFixed(2)
+                //var bias_percent = Math.floor(bias_percent * 100) / 100
             var final_profit = daily_profit - bias_loss
-            var final_profit = Math.floor(final_profit * 100) / 100
+            var final_profit = final_profit.toFixed(2)
+                //var final_profit = Math.floor(final_profit * 100) / 100
             return `
                             <p style="font: 20pt 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【销量预测结果评估】</p></br>
                             <div style="font:20pt SimSun; line-height: 1em; text-align:center; color:black">
-                            <p>实际销量为${ture_sale}杯</p>
-                            <p>您的预测为${self_pre}杯</p>
-                            <p>您的预测偏差百分比为${bias_percent}%</p>
-                            <p>您本次的预测收益为${final_profit}元</p></br>
+                            <p>实际销量为 ${ture_sale} 杯</p>
+                            <p>您的预测为 ${self_pre} 杯</p>
+                            <p>您的预测偏差百分比为 ${bias_percent}% </p>
+                            <p>您本次的预测收益为 ${final_profit} 元</p></br>
                             <p style='color:Gray;'>（按任意键继续）</p>
                             </div>`
         },
@@ -496,7 +498,7 @@
 
     var team_variables = [{
         team: 'images/Expert_user.png',
-        name: '专业人员和终端用户组成的算法团队'
+        name: '专业人员和柠檬水销售商组成的算法团队'
     }, {
         team: 'images/Experts.png',
         name: '完全专业人员组成的算法团队'
@@ -680,11 +682,11 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.2rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
-                <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
+                <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
-                <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
-                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
+                <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
                 `;
@@ -760,11 +762,11 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.4元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
-                <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
+                <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
-                <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
-                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
+                <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
                 `;
@@ -858,7 +860,6 @@
         <div style="font:20pt SimSun; line-height: 1em; text-align:center">
         <p>接下来您将进入第一阶段的问卷填写。</p>
         <p>填写结果影响到您之后的实验报酬，因此请认真填写！</p>
-        <p style='color:Gray;'>（按任意键继续）</p>
         </div>
         <p>`,
             button_lable: '填写问卷',
@@ -871,6 +872,9 @@
             type: jsPsychSurvey,
             pages: [
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 1/9 】</p>`,
+                }, {
                     type: 'text',
                     prompt: function() {
                         var delegated = jsPsych.data.get().filter({
@@ -888,6 +892,9 @@
                     required: true
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 2/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您认为这个团队设计合格的AI预测算法的能力有多大？',
                     likert_scale_min_label: '能力很低',
@@ -913,6 +920,9 @@
                     required: true,
                 }, ],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 3/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您现在认同这个算法设计团队吗？',
                     likert_scale_min_label: '完全不认同',
@@ -946,6 +956,9 @@
                     required: true,
                 }, ],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 4/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您觉得当前这个算法存在比自己预测表现好的优势吗？',
                     likert_scale_min_label: '完全不存在',
@@ -971,12 +984,15 @@
                     required: true,
                 }, ],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 5/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您觉得当前这个算法存在比自己预测表现好的优势吗？',
                     likert_scale_min_label: '完全不存在',
                     likert_scale_max_label: '完全存在',
                     likert_scale_values: likert_scale,
-                    name: 'Effectiveness_1',
+                    name: 'Effectiveness_4',
                     required: true,
                 }, {
                     type: 'likert',
@@ -984,7 +1000,7 @@
                     likert_scale_min_label: '肯定没用',
                     likert_scale_max_label: '肯定有用',
                     likert_scale_values: likert_scale,
-                    name: 'Effectiveness_2',
+                    name: 'Effectiveness_5',
                     required: true,
                 }, {
                     type: 'likert',
@@ -992,10 +1008,13 @@
                     likert_scale_min_label: '绝对不会表现很好',
                     likert_scale_max_label: '绝对会表现很好',
                     likert_scale_values: likert_scale,
-                    name: 'Effectiveness_3',
+                    name: 'Effectiveness_6',
                     required: true,
                 }, ],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 6/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您认为该算法的过程和结果有多大程度是可控的？',
                     likert_scale_min_label: '完全不可控',
@@ -1020,6 +1039,9 @@
                     required: true,
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 7/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 在面对该算法的时候，您认为自己很强大吗？',
                     likert_scale_min_label: '完全不强大',
@@ -1053,6 +1075,9 @@
                     required: true,
                 }, ],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 8/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您在多大程度上信任此算法可以高质量地预测了接下来一天的最佳柠檬水制作数量？',
                     likert_scale_min_label: '完全不信任',
@@ -1087,6 +1112,9 @@
                 }],
 
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 9/9 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您认为柠檬水预测工作对您来说是一项很复杂的工作吗？',
                     likert_scale_min_label: '一点也不复杂',
@@ -1150,9 +1178,11 @@
                 var daily_profit = (prediction > sale) ? (sale - prediction * 0.2) : (prediction * 0.8)
                 var bias_loss = (Math.abs(prediction - sale)) * 2
                 var bias_percent = ((Math.abs(prediction - sale)) / sale) * 100
-                var bias_percent = Math.floor(bias_percent * 100) / 100
+                var bias_percent = bias_percent.toFixed(2)
+                    //var bias_percent = Math.floor(bias_percent * 100) / 100
                 var final_profit = daily_profit - bias_loss
-                var final_profit = Math.floor(final_profit * 100) / 100
+                var final_profit = final_profit.toFixed(2)
+                    //var final_profit = Math.floor(final_profit * 100) / 100
                 date_list.push(date)
                 sale_list.push(sale)
                 prediction_list.push(prediction)
@@ -1160,12 +1190,13 @@
                 profit_list.push(final_profit)
             }
             var sum = 0
-            var average = 0
             for (var j = 0; j < 5; j++) {
                 sum = profit_list[j] + sum;
             }
-            average = sum / profit_list.length
-            average = Math.floor(average * 100) / 100
+            var average = sum / profit_list.length
+            var average = average.toFixed(2)
+
+            //average = Math.floor(average * 100) / 100
 
             return `
                             <p style="font: 24px 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您已授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
@@ -1201,8 +1232,10 @@
                 var daily_profit = (prediction > sale) ? (sale - prediction * 0.2) : (prediction * 0.8)
                 var bias_loss = (Math.abs(prediction - sale)) * 2
                 var bias_percent = ((Math.abs(prediction - sale)) / sale) * 100
+                    //var bias_percent = bias_percent.toFixed(2)
                 var bias_percent = Math.floor(bias_percent * 100) / 100
                 var final_profit = daily_profit - bias_loss
+                    //var final_profit = final_profit.toFixed(2)
                 var final_profit = Math.floor(final_profit * 100) / 100
                 date_list.push(date)
                 sale_list.push(sale)
@@ -1211,12 +1244,11 @@
                 profit_list.push(final_profit)
             }
             var sum = 0
-            var average = 0
             for (var j = 0; j < 5; j++) {
                 sum = profit_list[j] + sum;
             }
-            average = sum / profit_list.length
-            average = Math.floor(average * 100) / 100
+            var raw_average = sum / profit_list.length
+            var average = Math.floor(raw_average * 100) / 100
             data.profit_part1 = average
 
         }
@@ -1273,8 +1305,10 @@
                 var daily_profit = (prediction > sale) ? (sale - prediction * 0.2) : (prediction * 0.8)
                 var bias_loss = (Math.abs(prediction - sale)) * 2
                 var bias_percent = ((Math.abs(prediction - sale)) / sale) * 100
+                    //var bias_percent = bias_percent.toFixed(2)
                 var bias_percent = Math.floor(bias_percent * 100) / 100
                 var final_profit = daily_profit - bias_loss
+                    //var final_profit = final_profit.toFixed(2)
                 var final_profit = Math.floor(final_profit * 100) / 100
                 date_list.push(date)
                 sale_list.push(sale)
@@ -1283,12 +1317,11 @@
                 profit_list.push(final_profit)
             }
             var sum = 0
-            var average = 0
             for (var j = 0; j < 5; j++) {
                 sum = profit_list[j] + sum;
             }
-            average = sum / profit_list.length
-            average = Math.floor(average * 100) / 100
+            var raw_average = sum / profit_list.length
+            var average = Math.floor(raw_average * 100) / 100
 
             return `
                             <p style="font: 24px 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您未授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
@@ -1324,9 +1357,11 @@
                 var daily_profit = (prediction > sale) ? (sale - prediction * 0.2) : (prediction * 0.8)
                 var bias_loss = (Math.abs(prediction - sale)) * 2
                 var bias_percent = ((Math.abs(prediction - sale)) / sale) * 100
-                var bias_percent = Math.floor(bias_percent * 100) / 100
+                var bias_percent = bias_percent.toFixed(2)
+                    //var bias_percent = Math.floor(bias_percent * 100) / 100
                 var final_profit = daily_profit - bias_loss
-                var final_profit = Math.floor(final_profit * 100) / 100
+                var final_profit = final_profit.toFixed(2)
+                    //var final_profit = Math.floor(final_profit * 100) / 100
                 date_list.push(date)
                 sale_list.push(sale)
                 prediction_list.push(prediction)
@@ -1339,7 +1374,8 @@
                 sum = profit_list[j] + sum;
             }
             average = sum / profit_list.length
-            average = Math.floor(average * 100) / 100
+            average = average.toFixed(2)
+                //average = Math.floor(average * 100) / 100
             data.profit_part1 = average
         }
 
@@ -1374,8 +1410,7 @@
                     <p style='text-indent:7rem'>· 偏差1杯，获得报酬5元。</p>
                     <p style='text-indent:7rem'>· 偏差2杯，获得报酬2元。</p>
                     <p style='text-indent:7rem'>· 偏差大于2杯，获得报酬1元。</p>
-                    <p style='text-indent:5rem'> (2)实验结束后，随机抽取一次预测收益作为浮动酬金2。</p>
-                    <p line-height: 0em> # 最终酬金=基本酬金+浮动酬金1+浮动酬金2。</p></div>
+                    <p style='text-indent:5rem'> (2)实验结束后，随机抽取一次预测收益作为浮动酬金2。</p></div>
                     ——————————————————————————————————————————————————————<br/><br/>
                     <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:16px 微软雅黑; line-height: 0.8em; text-align:left"> 
                     例如，正式实验环节2的浮动酬金的规则示例（非真实实验数据）：<br/>
@@ -1435,11 +1470,11 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
-                <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
+                <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
-                <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
-                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
+                <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
                 `;
@@ -1544,11 +1579,11 @@
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
                 # 预测使用的基本信息（售价1元/杯，成本0.2元/杯）：</p>
                 <div style="text-indent:4.375rem /* 70/16 */; font:18pt SimSun; line-height: 1em; text-align:left">
-                <p>① 日期：${jsPsych.timelineVariable('Date')}：</p>
+                <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
-                <p>③ 气温：${jsPsych.timelineVariable('Temperature')}°C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')}ml</p>
-                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')}张</p></div>
+                <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
                 `;
@@ -1690,7 +1725,6 @@
         <div style="font:20pt SimSun; line-height: 1em; text-align:center">
         <p>接下来您将进入第二阶段的问卷填写。</p>
         <p>填写结果影响到您之后的实验报酬，因此请认真填写！</p>
-        <p style='color:Gray;'>（按任意键继续）</p>
         </div>
         <p>`,
             button_lable: '填写问卷',
@@ -1703,6 +1737,9 @@
             type: jsPsychSurvey,
             pages: [
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 1/5 】</p>`,
+                }, {
                     type: 'text',
                     prompt: '请问您对当前这个算法有什么想法或者感受？',
                     textbox_rows: 3,
@@ -1711,6 +1748,9 @@
                 }],
 
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 2/5 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您现在认为这份预测工作的难度如何？',
                     likert_scale_min_label: '难度很低',
@@ -1728,6 +1768,9 @@
                     required: true,
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 3/5 】</p>`,
+                }, {
                     type: 'ranking',
                     prompt: '· 您认为柠檬水预测任务中四个预测信息的重要性排序是怎样的？(上下拖动选项进行排序）',
                     name: 'Self_reasoning',
@@ -1743,6 +1786,9 @@
                     required: true,
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 4/5 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 您现在在多大程度上信任此算法可以高质量地预测了柠檬水销量？',
                     likert_scale_min_label: '完全不信任',
@@ -1768,6 +1814,9 @@
                     required: true,
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 5/5 】</p>`,
+                }, {
                     type: 'multi-select',
                     prompt: '· 关于本游戏中提到的算法，以下哪些说法是正确的？',
                     options: ["这个算法是基于AI实现的预测算法", "这个算法团队全部是专业人士", "这个算法的预测正确率是100%", "这个算法到目前为止都是免费使用的"],
@@ -1890,7 +1939,6 @@
         <p style="font: 20pt 微软雅黑; line-height: 1.5em; text-align:center">【问卷填写】</p></br>
         <div style="font:20pt SimSun; line-height: 1em; text-align:center">
         <p>接下来您将进入最后一阶段的问卷填写，请认真填写。</p>
-        <p style='color:Gray;'>（按任意键继续）</p>
         </div>
         <p>`,
             button_lable: '填写问卷',
@@ -1900,7 +1948,10 @@
 
     var variables_measurement_part3_PDB = {
             type: jsPsychSurveyLikert,
-            preamble: '<p>请回答对以下观点的赞成程度</p>',
+            preamble: `
+            <p style="font: 10pt 微软雅黑; line-height: 1 em;color:Gray; text-align:center">【 8/10 】</p>
+            <p style="font: 10pt 微软雅黑; line-height: 0.1em; text-align:left">请回答对以下观点的赞成程度</p>
+            `,
             questions: [{
                 prompt: "组织中较低层次的人应该毫无疑义地执行较高层次的人的要求。",
                 name: 'Self_PDB_1',
@@ -1942,6 +1993,9 @@
             pages: [
                 [{
                     type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 9/10 】</p>`,
+                }, {
+                    type: 'html',
                     prompt: '算法的应用十分广泛。接下来你将看到关于算法的一些陈述，请判断是否正确。',
                 }, {
                     type: 'likert',
@@ -1969,6 +2023,9 @@
                     required: true,
                 }],
                 [{
+                    type: 'html',
+                    prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 10/10 】</p>`,
+                }, {
                     type: 'likert',
                     prompt: '· 算法可以像人类一样思考。',
                     name: 'Algo_literacy_5',
@@ -2016,7 +2073,6 @@
         <p>在正式进入实验之前，您首先需要填写个人基本信息，并回答相关问项。</p>
         <p>您的信息我们将完全保密。</p>
         <p>填写结果影响到您之后的实验报酬，因此请认真填写！</p>
-        <p style='color:Gray;'>（按任意键继续）</p>
         </div>
         <p>`,
             button_lable: '填写个人信息',
@@ -2029,7 +2085,7 @@
             preamble: `
                     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; ">请如实填写以下信息。</p>
             `,
-            html: '<div style="font: 14pt SimSun; text-align: left; line-height: 1.5em; font-weight:bold"> <p> 1. 您的性别：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br> <p> 2. 您的年龄：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br> <p> 4. 您所学的专业：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br></div>',
+            html: '<div style="font: 14pt SimSun; text-align: left; line-height: 1.5em; font-weight:bold"> <p> 1. 您的性别：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br> <p> 2. 您的年龄：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br> <p> 3. 您所学的专业：<input type="text" id="test-resp-box" name="response" size="20" required/></p></br></div>',
             autofocus: 'test-resp-box',
             button_label: '下一页',
             name: 'basic_info',
@@ -2040,6 +2096,9 @@
         type: jsPsychSurvey,
         pages: [
             [{
+                type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 1/10 】</p>`,
+            }, {
                 type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
@@ -2085,6 +2144,9 @@
             }],
             [{
                 type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 2/10 】</p>`,
+            }, {
+                type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
                 type: 'likert',
@@ -2128,6 +2190,9 @@
                 required: true,
             }],
             [{
+                type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 3/10 】</p>`,
+            }, {
                 type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
@@ -2173,6 +2238,9 @@
             }],
             [{
                 type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 4/10 】</p>`,
+            }, {
+                type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
                 type: 'likert',
@@ -2216,6 +2284,9 @@
                 required: true,
             }],
             [{
+                type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 5/10 】</p>`,
+            }, {
                 type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
@@ -2261,6 +2332,9 @@
             }],
             [{
                 type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 6/10 】</p>`,
+            }, {
+                type: 'html',
                 prompt: '请判断下列陈述是否符合您的情况。',
             }, {
                 type: 'likert',
@@ -2304,6 +2378,9 @@
                 required: true,
             }],
             [{
+                type: 'html',
+                prompt: `<p style="font: 10pt 微软雅黑; line-height: 0.1em;color:Gray; text-align:center">【 7/10 】</p>`,
+            }, {
                 type: 'likert-table',
                 prompt: '在一项游戏中，收益结果是根据抛硬币的结果决定的，请仔细阅读收益规则并决定是否接受游戏挑战。',
                 statements: [{
@@ -2452,7 +2529,7 @@
         //basic_info_survey,
         exp_background_remuneration,
         seven_day_prac,
-        manip_PDB,
+        //manip_PDB,
         formal_exp_intro,
         manip_Team,
         factors_survey_1,
