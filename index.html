@@ -174,7 +174,7 @@
                     <p style='text-indent:5rem'> (2)正式实验环节2：浮动酬金2=<font color="red">随机选取</font>某一次的预测收益。</p>
                     <p line-height: 0em> # 最终酬金=基本酬金+浮动酬金1+浮动酬金2。（根据个人表现，最终酬金在<font color="red">35~75元</font>之间浮动）</p></div>
                     ——————————————————————————————————————————————————————<br/><br/>
-                    <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:16px 微软雅黑; line-height: 0.8em; text-align:left"> 
+                    <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:1rem /* 16/16 */ 微软雅黑; line-height: 0.8em; text-align:left"> 
                     例如，正式实验环节1的浮动酬金的简单计算示例（非真实实验数据）：<br/>
                     <p>· 售价：1元/杯</p>
                     <p>· 成本：0.2元/杯</p>
@@ -184,7 +184,7 @@
                     <p>· 将两次的平均收益作为实验环节1的浮动酬金，则截止实验环节1的实验酬金为：15+(6+2)/2=19元</p>
                     </div>
                     ———————————————————————————————————————————————————————<br/>
-                    <p style="text-indent:2.5rem /* 40/16 */; font:15px 微软雅黑; line-height: 0.8em; text-align:center">请仔细阅读现在提供的酬金信息，接下来会有一些酬金的计算问题。</p>
+                    <p style="text-indent:2.5rem /* 40/16 */; font:.9375rem /* 15/16 */ 微软雅黑; line-height: 0.8em; text-align:center">请仔细阅读现在提供的酬金信息，接下来会有一些酬金的计算问题。</p>
                     <p>`,
             button_label: '已了解酬金规则',
             delay_after: 100
@@ -224,7 +224,7 @@
                     <p style="font: 18pt 微软雅黑; text-align: left; line-height: 1.2em">【游戏要点】</p></br>
                     <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1em'>
                     作为经营类游戏，您的主要职责是根据<font color="red">5项相关信息预测相应的柠檬水销量</font>。5项相关信息的介绍如下：</p>
-                    <div style="text-indent:4.375rem /* 70/16 */; font:20px SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:4.375rem /* 70/16 */; font:1.25rem /* 20/16 */ SimSun; line-height: 0.8em; text-align:left">
                     <p>① <font color="red">日期</font>：月份和几号，例如8月15号。</p>
                     <p>② <font color="red">星期</font>：周一到周日。</p>
                     <p>③ <font color="red">气温</font>：摄氏度，根据天气预报得到。</p>
@@ -234,13 +234,13 @@
                    
                     <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1em'>
                         根据公园的相关规定和市场行情，以下信息<font color="red">短期内不会发生变化</font>：</p>
-                    <div style="text-indent:4.375rem /* 70/16 */; font:20px SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:4.375rem /* 70/16 */; font:1.25rem /* 20/16 */ SimSun; line-height: 0.8em; text-align:left">
                     <p>· 柠檬水售价：1 元/杯。</p>
                     <p>· 制作成本：0.2元/杯。</p>
                     <p>· 正式实验环节1的预测偏差损失：2元/杯。</p></div>
                     </br>
 
-                    <div style="text-indent:2.5rem /* 40/16 */; font:18px SimSun; line-height: 0.8em; text-align:left">
+                    <div style="text-indent:2.5rem /* 40/16 */; font:1.125rem /* 18/16 */ SimSun; line-height: 0.8em; text-align:left">
                     <p>注意1：经营日期在两个月的时间内<font color="red">随机选取</font>，并不会按照时间顺序依次出现，因此务必仔细阅读出现的信息。</p>
                     <p>注意2：本次实验过程中的数据均根据来自现有数据集，不会出现根据您的预测修改真实结果的情况！</p></div>
                     
@@ -259,8 +259,8 @@
             type: jsPsychFullscreen,
             fullscreen_mode: true,
             message: `
-        <p style="font: 24px 微软雅黑; line-height: 1.5em; text-align:center">【练习阶段】</p></br>
-        <div style="font:24px SimSun; line-height: 1.2em; text-align:center">
+        <p style="font: 1.5rem /* 24/16 */ 微软雅黑; line-height: 1.5em; text-align:center">【练习阶段】</p></br>
+        <div style="font:1.5rem /* 24/16 */ SimSun; line-height: 1.2em; text-align:center">
         <p>接下来您将进入游戏的练习阶段。</p>
         <p>练习阶段是为了帮助您更好地了解经营任务的一般情况，会影响您接下来的预测表现，因此请认真练习！</p>
         <p style='color:Gray;'>练习阶段的表现不计入浮动酬金随机抽取范围。</p>
@@ -712,8 +712,8 @@
                     }).values()[0]
                     var team_info = eval(JSON.parse(JSON.stringify(team_intro_info))).team_condition
                     var html = `
-                        <p style="font: 20px 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; "></p></br>
-                    <p style="font:24px SimSun; line-height: 1.5em; text-align:left; color:black">
+                        <p style="font: 1.25rem /* 20/16 */ 微软雅黑; text-align: left; line-height: 1.5em;color:Gray; "></p></br>
+                    <p style="font:1.5rem /* 24/16 */ SimSun; line-height: 1.5em; text-align:left; color:black">
                     根据预测信息，<b>${team_info}</b>提供的算法的预测结果为：<b>${jsPsych.timelineVariable('Algo_pred_w')}</b>杯</p>
                     </p>
                     </br></br>
@@ -1199,9 +1199,9 @@
             //average = Math.floor(average * 100) / 100
 
             return `
-                            <p style="font: 24px 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您已授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
-                            <p style="font: 22px 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">5次销量预测结果评估如下：</p></br>
-                            <div style="font:20px SimSun; line-height: 1em; text-align:center; color:black">
+                            <p style="font: 1.5rem /* 24/16 */ 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您已授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
+                            <p style="font: 1.375rem /* 22/16 */ 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">5次销量预测结果评估如下：</p></br>
+                            <div style="font:1.25rem /* 20/16 */ SimSun; line-height: 1em; text-align:center; color:black">
                             <p>第1次：预测日期为${date_list[0]}，实际销量是${sale_list[0]}杯，算法的预测为${prediction_list[0]}杯，预测偏差百分比为${bias_percent_list[0]}%，此次收益为${profit_list[0]}元。</p>
                             <p>第2次：预测日期为${date_list[1]}，实际销量是${sale_list[1]}杯，算法的预测为${prediction_list[1]}杯，预测偏差百分比为${bias_percent_list[1]}%，此次收益为${profit_list[1]}元。</p>
                             <p>第3次：预测日期为${date_list[2]}，实际销量是${sale_list[2]}杯，算法的预测为${prediction_list[2]}杯，预测偏差百分比为${bias_percent_list[2]}%，此次收益为${profit_list[2]}元。</p>
@@ -1324,9 +1324,9 @@
             var average = Math.floor(raw_average * 100) / 100
 
             return `
-                            <p style="font: 24px 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您未授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
-                            <p style="font: 22px 微软雅黑; line-height: 1.2em;color:Gray; text-align:center">5次销量预测结果评估如下：</p></br>
-                            <div style="font:20px SimSun; line-height: 1em; text-align:center; color:black">
+                            <p style="font: 1.5rem /* 24/16 */ 微软雅黑; line-height: 1.5em;color:Gray; text-align:center">【您未授权 ${team_info}提供的AI算法 为您做5次的销量预测】</p></br>
+                            <p style="font: 1.375rem /* 22/16 */ 微软雅黑; line-height: 1.2em;color:Gray; text-align:center">5次销量预测结果评估如下：</p></br>
+                            <div style="font:1.25rem /* 20/16 */ SimSun; line-height: 1em; text-align:center; color:black">
                             <p>第1次：预测日期为${date_list[0]}，实际销量是${sale_list[0]}杯，您的预测为${prediction_list[0]}杯，预测偏差百分比为${bias_percent_list[0]}%，此次收益为${profit_list[0]}元。</p>
                             <p>第2次：预测日期为${date_list[1]}，实际销量是${sale_list[1]}杯，您的预测为${prediction_list[1]}杯，预测偏差百分比为${bias_percent_list[1]}%，此次收益为${profit_list[1]}元。</p>
                             <p>第3次：预测日期为${date_list[2]}，实际销量是${sale_list[2]}杯，您的预测为${prediction_list[2]}杯，预测偏差百分比为${bias_percent_list[2]}%，此次收益为${profit_list[2]}元。</p>
@@ -1412,7 +1412,7 @@
                     <p style='text-indent:7rem'>· 偏差大于2杯，获得报酬1元。</p>
                     <p style='text-indent:5rem'> (2)实验结束后，随机抽取一次预测收益作为浮动酬金2。</p></div>
                     ——————————————————————————————————————————————————————<br/><br/>
-                    <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:16px 微软雅黑; line-height: 0.8em; text-align:left"> 
+                    <div style="text-indent:4.375rem /* 70/16 */; color:Gray; font:1rem /* 16/16 */ 微软雅黑; line-height: 0.8em; text-align:left"> 
                     例如，正式实验环节2的浮动酬金的规则示例（非真实实验数据）：<br/>
                     <p>· 第一次预测15杯，实际销售13杯，第一次收益：2元。</p>
                     <p>· 第二次预测15杯，实际需求20杯，第二次收益：1元。</p>
