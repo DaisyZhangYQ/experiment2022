@@ -200,10 +200,10 @@
                     <p>· 预测偏差损失：每偏离正确销量一杯，损失2元</p>
                     <p>· 第一次预测15杯，实际销售13杯，第一次总收益：13x1-15x0.2-(15-13)x2 = 6元</p>
                     <p>· 第二次预测15杯，实际需求20杯，第二次总收益：15x1-15x0.2-(20-15)x2 = 2元</p>
-                    <p>· 将两次的平均收益作为实验环节1的浮动酬金，则截止实验环节1的实验酬金为：15+(6+2)/2=19元</p>
+                    <p>· 将两次的平均收益作为实验环节1的浮动酬金，则截止实验环节1的实验酬金为：20+(6+2)/2=24元</p>
                     </div>
                     ———————————————————————————————————————————————————————<br/>
-                    <p style="text-indent:2.5rem /* 40/16 */; font:.9375rem /* 15/16 */ 微软雅黑; line-height: 0.8em; text-align:center">请仔细阅读现在提供的酬金信息，接下来会有一些酬金的计算问题。</p>
+                    <p style="text-indent:2.5rem /* 40/16 */; font:.9375rem /* 15/16 */ 微软雅黑; line-height: 0.8em; text-align:center;  color:red;">请仔细阅读现在提供的酬金信息，接下来会有一些酬金的计算问题。</p>
                     <p>`,
             button_label: '已了解酬金规则',
             delay_after: 100
@@ -221,14 +221,17 @@
             preamble: '为了让你更清楚本实验的酬金发放规则，请在5分钟之内计算实验环节1的浮动酬金。（可使用提供的纸和笔）',
             questions: [{
                 prompt: '1.售价1元/杯，制作成本0.25元/杯，预测偏差损失0.5元/杯，制作30杯，实际需求40杯，当天净收益为多少元？',
+                placeholder: '整数或者小数',
 
                 required: true
             }, {
                 prompt: '2.售价1元/杯，制作成本0.20元/杯，预测偏差损失1元/杯，预计制作20杯，实际销售20杯，当天净收益为多少元？',
+                placeholder: '整数或者小数',
 
                 required: true
             }, {
                 prompt: '3.售价1元/杯，制作成本0.3元/杯，预测偏差损失0.5元/杯，预计制作25杯，实际销售20杯，当天净收益为多少元？',
+                placeholder: '整数或者小数',
 
                 required: true
             }],
@@ -247,7 +250,7 @@
                     <p>① <font color="red">日期</font>：月份和几号，例如8月15号。</p>
                     <p>② <font color="red">星期</font>：周一到周日。</p>
                     <p>③ <font color="red">气温</font>：摄氏度，根据天气预报得到。</p>
-                    <p>④ <font color="red">降水量</font>：单位毫升，根据天气预报得到。</p>
+                    <p>④ <font color="red">降水量</font>：单位毫米，根据天气预报得到。</p>
                     <p>⑤ <font color="red">制作传单数</font>：当天制作的传单数量（传单的制作和发放成本暂时不考虑）。</p></div>
                     </br>
                    
@@ -301,7 +304,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</font></p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
@@ -703,7 +706,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
@@ -782,7 +785,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
                 <p class='context' style='text-indent:3.125rem /* 50/16 */; line-height: 1.2em'>
@@ -987,7 +990,7 @@
                     required: true,
                 }, {
                     type: 'likert',
-                    prompt: '· 你认为你和这个算法团队之间的有关联吗？',
+                    prompt: '· 你认为你和这个算法团队之间有关联吗？',
                     likert_scale_min_label: '没有关联',
                     likert_scale_max_label: '有关联',
                     likert_scale_values: likert_scale,
@@ -1051,7 +1054,7 @@
                         var team_info = eval(JSON.parse(JSON.stringify(team_intro_info))).team_condition
 
                         var html = `
-                            <p class='context'></p></br>/br>
+                            <p class='context'></p></br></br>
                             <div style='text-indent:2.1875rem /* 35/16 */; line-height: 1.2em; font-weight:500'>
                             <p >在心理学中，控制指的是个人感知自己具备的影响自己、他人、环境的能力，对自己或他人的控制可以影响个人的情绪和行为。</p>
                             <p >研究表明，在AI情境下，<b>有人认为自己完全没有能力去控制AI</b>，AI完全是失控的；<b>也有人认为自己可以自由地控制AI</b>设计、使用和更新等环节。</p>
@@ -1524,7 +1527,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
@@ -1633,7 +1636,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
@@ -1838,7 +1841,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
@@ -1947,7 +1950,7 @@
                 <p>① 日期：${jsPsych.timelineVariable('Date')}</p>
                 <p>② 星期：${jsPsych.timelineVariable('Day')}</p>
                 <p>③ 气温：${jsPsych.timelineVariable('Temperature')} °C</p>
-                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} ml</p>
+                <p>④ 降水量：${jsPsych.timelineVariable('Rainfall')} mm</p>
                 <p>⑤ 制作传单数：${jsPsych.timelineVariable('Flyers')} 张</p></div>
                 </br></br>
  
@@ -2185,7 +2188,7 @@
                     prompt: '· 您认为该算法团队的能力如何？（请你选择4）',
                     likert_scale_min_label: '很低',
                     likert_scale_max_label: '很高',
-                    name: 'Performance_eval',
+                    name: 'Attention_check_3',
                     likert_scale_values: likert_scale,
                     required: true,
                 }, {
